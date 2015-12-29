@@ -1,0 +1,9 @@
+server:
+  port: 8080
+logging:
+  level:
+    microservices.demo: DEBUG
+    
+demo:
+  name: Microservice Demo App
+  version: 0.1
