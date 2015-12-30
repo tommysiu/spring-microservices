@@ -1,0 +1,6 @@
+configuration:
+  account-service-url: http://localhost:28081
+  card-service-url: http://localhost:29081
+demo:
+  name: Microservice Demo App (UAT)
+  version: 0.2

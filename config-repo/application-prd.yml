@@ -1,0 +1,6 @@
+configuration:
+  account-service-url: http://localhost:18081
+  card-service-url: http://localhost:19081
+demo:
+  name: Microservice Demo App (PRODUCTION)
+  version: 0.2
