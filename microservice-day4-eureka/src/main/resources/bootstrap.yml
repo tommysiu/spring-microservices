@@ -2,5 +2,5 @@ server:
   port: ${PORT:8761}
 spring:
   application:
-    name: microservice-eureka
+    name: eureka-service
   

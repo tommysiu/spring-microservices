@@ -25,7 +25,7 @@ public class AccountService {
 			@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value ="10000")})
 	public Account getAccount(long userId) {
 		logger.info("getAccount() has been called");
-		return this.restTemplate.getForObject("http://microservice-account-service/accounts/{userId}", Account.class,
+		return this.restTemplate.getForObject("http://account-service/accounts/{userId}", Account.class,
 				userId);
 	}
 

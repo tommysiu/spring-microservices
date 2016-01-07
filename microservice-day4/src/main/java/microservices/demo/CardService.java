@@ -18,7 +18,7 @@ public class CardService {
 	private RestTemplate restTemplate;
 
 	public List<Card> getCardsOwnedBy(long userId) {
-		URI targetUri = UriComponentsBuilder.fromUriString("http://microservice-card-service").path("/cards")
+		URI targetUri = UriComponentsBuilder.fromUriString("http://card-service").path("/cards")
 				.queryParam("userId", userId).build().toUri();
 		
 		Card[] cards = restTemplate.getForObject(targetUri, Card[].class);

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: microservice-main
+    name: sample-main
   cloud:
     config:
       uri: http://localhost:18888

@@ -13,7 +13,7 @@ public class AccountService {
 	private RestTemplate restTemplate;
 
 	public Account getAccount(long userId) {
-		return this.restTemplate.getForObject("http://microservice-account-service/accounts/{userId}", Account.class,
+		return this.restTemplate.getForObject("http://account-service/accounts/{userId}", Account.class,
 				userId);
 	}
 }

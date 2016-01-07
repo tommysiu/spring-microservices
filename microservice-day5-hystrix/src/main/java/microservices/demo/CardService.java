@@ -31,7 +31,7 @@ public class CardService {
 
 		logger.info("getCardsOwnedBy() has been called");
 
-		URI targetUri = UriComponentsBuilder.fromUriString("http://microservice-card-service").path("/cards")
+		URI targetUri = UriComponentsBuilder.fromUriString("http://card-service").path("/cards")
 				.queryParam("userId", userId).build().toUri();
 
 		Card[] cards = restTemplate.getForObject(targetUri, Card[].class);

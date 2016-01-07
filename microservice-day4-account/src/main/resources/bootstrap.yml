@@ -1,9 +1,9 @@
 spring:
   application:
-    name: microservice-account-service
+    name: account-service
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: microservice-config-service
+        service-id: config-service
         

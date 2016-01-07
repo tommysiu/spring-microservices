@@ -1,8 +1,8 @@
 spring:
   application:
-    name: microservice-card-service
+    name: card-service
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: microservice-config-service
+        service-id: config-service
