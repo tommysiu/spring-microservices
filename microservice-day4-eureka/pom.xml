@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>microservice-day4-eureka</name>
-	<description>Simple project for Spring Boot</description>
+	<description>Simple project for Service Discovery Pattern using Eureka</description>
 
 	<parent>
 		<groupId>org.springframework.cloud</groupId>
