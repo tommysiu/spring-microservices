@@ -1,6 +1,8 @@
 package microservices.demo;
 
-import java.util.Map;
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,15 +33,15 @@ public class RequestHeaderLoggingFilter extends ZuulFilter {
 	@Override
 	public Object run() {
 		RequestContext ctx = RequestContext.getCurrentContext();
-		Map<String, String> headers = ctx.getZuulRequestHeaders();
-
+		HttpServletRequest request = ctx.getRequest();
+		
 		logger.info("Request headers:");
-		if (headers != null) {
-			headers.forEach((key, value) -> {
-				logger.info("Header[" + key + "]=[" + value + "]");
-			});
+		Enumeration<String> headers = request.getHeaderNames();
+		while(headers.hasMoreElements()) {
+			String name = headers.nextElement();
+			logger.info("Header[" + name + "]=[" + request.getHeader(name) + "]");
 		}
-
+		
 		return null;
 	}
 
