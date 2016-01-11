@@ -1,0 +1,5 @@
+zuul:
+  ignored-services: "*"
+  routes:
+    card-service: /card-service/**
+    account-service: /account-service/**
