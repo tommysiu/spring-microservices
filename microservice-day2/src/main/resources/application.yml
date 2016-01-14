@@ -3,7 +3,8 @@ server:
 logging:
   level:
     microservices.demo: DEBUG
-    
-demo:
-  name: Microservice Demo App
-  version: 0.1
+configuration:
+  demo-name: Microservice Demo App
+  demo-version: 0.1
+  account-service-url: http://localhost:18081
+  card-service-url: http://localhost:19081

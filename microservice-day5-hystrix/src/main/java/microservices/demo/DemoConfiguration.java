@@ -10,24 +10,6 @@ import org.springframework.stereotype.Component;
 public class DemoConfiguration {
 	private String demoName;
 	private String demoVersion;
-	private String accountServiceUrl;
-	private String cardServiceUrl;
-
-	public void setAccountServiceUrl(String accountServiceUrl) {
-		this.accountServiceUrl = accountServiceUrl;
-	}
-
-	public void setCardServiceUrl(String cardServiceUrl) {
-		this.cardServiceUrl = cardServiceUrl;
-	}
-
-	public String getAccountServiceUrl() {
-		return this.accountServiceUrl;
-	}
-
-	public String getCardServiceUrl() {
-		return this.cardServiceUrl;
-	}
 
 	public String getDemoName() {
 		return demoName;

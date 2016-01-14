@@ -1,3 +1,3 @@
-demo:
-  name: Microservice Demo App (DEVELOPMENT)
-  version: 0.4.1
+configuration:
+  demo-name: Microservice Demo App (DEVELOPMENT)
+  demo-version: 0.4.1

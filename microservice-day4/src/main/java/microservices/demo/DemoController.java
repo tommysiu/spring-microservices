@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +27,8 @@ public class DemoController {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 
-	@Value("${demo.name}")
-	String appName;
-
-	@Value("${demo.version}")
-	String appVersion;
+	@Autowired
+	private DemoConfiguration config;
 
 	@RequestMapping("/summary/{userId}")
 	public Summary getSummary(@PathVariable long userId) {
@@ -48,8 +44,8 @@ public class DemoController {
 	@RequestMapping(value = "/app-info", method = RequestMethod.GET, produces = "application/json")
 	public Map<String, String> getAppInfo() {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("name", this.appName);
-		map.put("version", this.appVersion);
+		map.put("name", this.config.getDemoName());
+		map.put("version", this.config.getDemoVersion());
 		return map;
 	}
 
