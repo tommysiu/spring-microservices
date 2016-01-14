@@ -9,7 +9,6 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,11 +27,8 @@ public class DemoController {
 	@Autowired
 	CardService cardService;
 
-	@Value("${demo.name}")
-	String appName;
-
-	@Value("${demo.version}")
-	String appVersion;
+	@Autowired
+	DemoConfiguration config;
 
 	@RequestMapping(value = "/summary/{userId}", method = RequestMethod.GET)
 	public Summary getSummary(@PathVariable long userId) {
@@ -51,8 +47,8 @@ public class DemoController {
 		}
 
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("name", appName);
-		map.put("version", appVersion);
+		map.put("name", this.config.getDemoName());
+		map.put("version", this.config.getDemoVersion());
 		return map;
 	}
 }
